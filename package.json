@@ -14,6 +14,7 @@
     "prepublishOnly": "yarn test && yarn build",
     "prettier:ci": "prettier --list-different ./src/*.js",
     "coverage": "yarn build && yarn jest --coverage",
+    "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "yarn eslint ./src",
     "test": "yarn jest"
   },
