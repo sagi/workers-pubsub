@@ -1,0 +1,50 @@
+{
+  "name": "@sagi.io/cfw-pubsub",
+  "version": "0.0.1",
+  "description": "Google Pub/Sub API for Cloudflare Workers",
+  "author": "Sagi Kedmi <git@sagi.io> (https://sagi.io)",
+  "homepage": "https://sagi.io",
+  "main": "index.js",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "build": "babel --ignore '**/*.test.js' --ignore testdata src -d lib --verbose",
+    "prepublish": "yarn build",
+    "prettier:ci": "prettier --list-different ./src/*.js",
+    "coverage": "yarn build && yarn jest --coverage",
+    "lint": "yarn eslint ./src",
+    "test": "yarn build && yarn jest"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-eslint": "^10.0.2",
+    "coveralls": "^3.0.3",
+    "cross-fetch": "^3.0.4",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-jest": "^22.7.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "jest": "^24.8.0",
+    "jest-junit": "^6.4.0",
+    "node-webcrypto-ossl": "^1.0.44",
+    "prettier": "^1.17.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sagi/cfw-pubsub.git"
+  },
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "cloudflare workers",
+    "pubsub",
+    "gcp",
+    "google",
+    "cloud"
+  ],
+  "dependencies": {
+    "@sagi.io/cfw-jwt": "^0.0.9"
+  }
+}
