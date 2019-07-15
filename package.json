@@ -13,7 +13,7 @@
     "prettier:ci": "prettier --list-different ./src/*.js",
     "coverage": "yarn build && yarn jest --coverage",
     "lint": "yarn eslint ./src",
-    "test": "yarn build && yarn jest"
+    "test": "yarn jest"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -35,17 +35,10 @@
     "type": "git",
     "url": "https://github.com/sagi/cfw-pubsub.git"
   },
-  "keywords": [
-    "cloudflare",
-    "workers",
-    "cloudflare workers",
-    "pubsub",
-    "gcp",
-    "google",
-    "cloud"
-  ],
+  "keywords": ["cloudflare", "workers", "cloudflare workers", "pubsub", "gcp", "google", "cloud"],
   "dependencies": {
     "@sagi.io/cfw-jwt": "^0.0.9",
-    "@sagi.io/globalthis": "^0.0.2"
+    "@sagi.io/globalthis": "^0.0.2",
+    "base64url": "^3.0.1"
   }
 }

@@ -1,16 +1,24 @@
 import '@sagi.io/globalthis';
+import base64url from 'base64url';
 
 const ERR_PREFIX = `@sagi.io/cfw-pubsub`;
 
 // https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage
 export const createPubSubMessage = ({
   message = '',
-  attributes = null,
+  attributes = undefined,
 } = {}) => {
   if (!message && !attributes) {
     throw new Error(
       `${ERR_PREFIX}: must either have a non-empty message field or at least one attribute.`
     );
+  }
+  const data = base64url.encode(message);
+
+  if (attributes) {
+    return { data, attributes };
+  } else {
+    return { data };
   }
 };
 
