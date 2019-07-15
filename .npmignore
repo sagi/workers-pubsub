@@ -1,6 +1,5 @@
 *
-!index.js
-!/lib/*
+!/dist/main.js
 !package.json
 !README.md
 !LICENSE

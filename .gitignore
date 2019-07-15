@@ -1,7 +1,9 @@
 node_modules
 coverage
-*.swp
-yarn-error.log
+dist
 lib
-*.tgz
+
+yarn-error.log
 *.key.json
+*.swp
+*.tgz

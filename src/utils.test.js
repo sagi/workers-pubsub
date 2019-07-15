@@ -41,7 +41,7 @@ describe('utils', () => {
     const fn2 = jest.fn();
     const fnObj = { fnName1: fn1, fnName2: fn2 };
     const baseInputs = { satoshi: 'nakamoto' };
-    utils.injectBaseinputs(baseInputs, fnObj);
+    utils.injectBaseInputs(baseInputs, fnObj);
     expect(fn1).toHaveBeenCalledWith(baseInputs);
     expect(fn2).toHaveBeenCalledWith(baseInputs);
   });

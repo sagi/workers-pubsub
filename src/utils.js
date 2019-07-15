@@ -32,7 +32,7 @@ export const setGlobals = (fetchImpl = null) => {
   }
 };
 
-export const injectBaseinputs = (baseInputs, fnObj) =>
+export const injectBaseInputs = (baseInputs, fnObj) =>
   Object.entries(fnObj).reduce(
     (acc, [name, fn]) => ({ ...acc, [name]: fn(baseInputs) }),
     {}

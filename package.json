@@ -4,17 +4,25 @@
   "description": "Google Pub/Sub API for Cloudflare Workers",
   "author": "Sagi Kedmi <git@sagi.io> (https://sagi.io)",
   "homepage": "https://sagi.io",
-  "main": "index.js",
+  "main": "dist/main.js",
   "license": "MIT",
   "private": false,
   "scripts": {
-    "build": "babel --ignore '**/*.test.js' --ignore testdata src -d lib --verbose",
-    "prepublish": "yarn build",
+    "build:babel": "babel --ignore '**/*.test.js' --ignore testdata src -d lib --verbose",
+    "build:webpack": "webpack --display-modules ./lib",
+    "build": "yarn build:babel && yarn build:webpack",
+    "prepublishOnly": "yarn test && yarn build",
     "prettier:ci": "prettier --list-different ./src/*.js",
     "coverage": "yarn build && yarn jest --coverage",
     "lint": "yarn eslint ./src",
     "test": "yarn jest"
   },
+  "dependencies": {
+    "@sagi.io/cfw-jwt": "^0.0.9",
+    "@sagi.io/globalthis": "^0.0.2",
+    "base64url": "^3.0.1"
+  },
+
   "devDependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
@@ -29,16 +37,13 @@
     "jest": "^24.8.0",
     "jest-junit": "^6.4.0",
     "node-webcrypto-ossl": "^1.0.44",
-    "prettier": "^1.17.0"
+    "prettier": "^1.17.0",
+    "webpack": "^4.35.3",
+    "webpack-cli": "^3.3.6"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/sagi/cfw-pubsub.git"
   },
-  "keywords": ["cloudflare", "workers", "cloudflare workers", "pubsub", "gcp", "google", "cloud"],
-  "dependencies": {
-    "@sagi.io/cfw-jwt": "^0.0.9",
-    "@sagi.io/globalthis": "^0.0.2",
-    "base64url": "^3.0.1"
-  }
+  "keywords": ["cloudflare", "workers", "cloudflare workers", "pubsub", "gcp", "google", "cloud"]
 }
