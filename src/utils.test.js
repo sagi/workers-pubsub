@@ -2,7 +2,7 @@ import '@sagi.io/globalthis';
 import * as utils from './utils';
 
 describe('utils', () => {
-  test.only('keepTruthyProperties', () => {
+  test('keepTruthyProperties', () => {
     const data1 = null;
     const attributes1 = null;
     expect(utils.keepTruthyProperties({ data1, attributes1 })).toEqual({});
@@ -54,7 +54,7 @@ describe('utils', () => {
     expect(globalThis.fetch).toEqual(fetchImpl2);
   });
 
-  test('injectBaseinputs', () => {
+  test('injectBaseInputs', () => {
     const fn1 = jest.fn();
     const fn2 = jest.fn();
     const fnObj = { fnName1: fn1, fnName2: fn2 };
