@@ -2,6 +2,24 @@ import '@sagi.io/globalthis';
 import * as utils from './utils';
 
 describe('utils', () => {
+  test.only('keepTruthyProperties', () => {
+    const data1 = null;
+    const attributes1 = null;
+    expect(utils.keepTruthyProperties({ data1, attributes1 })).toEqual({});
+
+    const data2 = 'base64crap';
+    const attributes2 = null;
+    expect(utils.keepTruthyProperties({ data2, attributes2 })).toEqual({
+      data2,
+    });
+
+    const data3 = '';
+    const attributes3 = { type: 'slack-poll' };
+    expect(utils.keepTruthyProperties({ data3, attributes3 })).toEqual({
+      attributes3,
+    });
+  });
+
   test('createPubSubMessage', () => {
     expect(() => utils.createPubSubMessage()).toThrow();
 

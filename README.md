@@ -1,42 +1,88 @@
-# workers-kv
+# cfw-pubsub
 
-[`@sagi.io/workers-kv`](https://www.npmjs.com/package/@sagi.io/workers-kv) is a Cloudflare Workers KV API for Node.js.
+[`@sagi.io/cfw-pubsub`](https://www.npmjs.com/package/@sagi.io/cfw-pubsub) is a Google Pub/Sub REST API for Cloudflare Workers (can also be used with Node).
 
-[![CircleCI](https://circleci.com/gh/sagi/workers-kv.svg?style=svg&circle-token=c5ae7a8993d47db9ca08a628614585ca45c75f33)](https://circleci.com/gh/sagi/workers-kv)
-[![MIT License](https://img.shields.io/npm/l/@sagi.io/workers-kv.svg?style=flat-square)](http://opensource.org/licenses/MIT)
-[![version](https://img.shields.io/npm/v/@sagi.io/workers-kv.svg?style=flat-square)](http://npm.im/@sagi.io/workers-kv)
+[![CircleCI](https://circleci.com/gh/sagi/cfw-pubsub.svg?style=svg&circle-token=c5ae7a8993d47db9ca08a628614585ca45c75f33)](https://circleci.com/gh/sagi/cfw-pubsub)
+[![MIT License](https://img.shields.io/npm/l/@sagi.io/cfw-pubsub.svg?style=flat-square)](http://opensource.org/licenses/MIT)
+[![version](https://img.shields.io/npm/v/@sagi.io/cfw-pubsub.svg?style=flat-square)](http://npm.im/@sagi.io/cfw-pubsub)
 
 ## Installation
 
 ~~~
-$ npm i @sagi.io/workers-kv
-~~~
-
-## Quickstart
-
-First, instantiate a `WorkersKV` instance:
-
-~~~js
-const WorkersKV = require('@sagi.io/workers-kv')
-
-const cfAccountId = process.env.CLOUDFLARE_ACCOUNT_ID;
-const cfAuthKey = process.env.CLOUDFLARE_AUTH_KEY;
-const cfEmail = process.env.CLOUDFLARE_EMAIL;
-
-const KV = new WorkersKV({ cfAccountId, cfAuthKey, cfEmail })
-~~~
-
-Then, access it's instance methods. For instance:
-
-~~~js
-const namespaceId = '...'
-
-const allKeys = await KV.listAllKeys({ namespaceId })
+$ npm i @sagi.io/cfw-pubsub
 ~~~
 
 ## API
 
-We adhere to [Cloudflare's Workers KV REST API](https://api.cloudflare.com/#workers-kv-namespace-properties).
+Instantiate a `PubSubREST` instance:
+
+~~~js
+import PubSubREST from '@sagi.io/cfw-pubsub'
+const serviceAccountJSON = ...
+
+const PubSub = new PubSubREST({ serviceAccountJSON })
+~~~
+
+### **`PubSub.topics.list({ ... })`**
+
+### **`PubSub.topics.publish({ ... })`**
+
+### **`PubSub.helpers.createPubSubMessage({ ... })`**
+Function definition:
+
+```js
+const createPubSubMessage = ({
+  message = '',
+  attributes = undefined,
+} = {}) => { ... }
+```
+Where:
+
+  - **`message`** *optional* Your Cloudflare account id.
+  - **`cfEmail`** *optional* The email you registered with Cloudflare.
+ 
+
+## Cloudflare Workers Example
+
+~~~js
+import base64url from 'base64url'
+import PubSubREST from '@sagi.io/cfw-pubsub'
+
+const serviceAccountJSON = ...
+
+const PubSub = await PubSubREST({ serviceAccountJSON })
+
+const topic = 'gcf-task'
+const psMessage = PubSub.createPubSubMessage({ message: 'Hello World!' })
+const messages = [ psMessage ]
+
+await PubSub.topics.publish({ topic, messages })
+~~~
+
+## Node.js Example
+
+~~~js
+import fetchImpl from 'cross-fetch'
+import WebCrytpo from 'node-webcrypto-ossl'
+import PubSubREST from '@sagi.io/cfw-pubsub'
+
+const cryptoImpl = new WebCrypto()
+
+const serviceAccountJSON = ...
+
+const PubSub = await PubSubREST({ serviceAccountJSON, cryptoImpl. fetchImpl })
+
+const topic = 'gcf-task'
+const psMessage = PubSub.helpers.createPubSubMessage({ message: 'Hello World!' })
+const messages = [ psMessage ]
+
+await PubSub.topics.publish({ topic, messages })
+~~~
+
+
+## API
+
+We adhere to [Cloudflare's Workers KV REST API](https://api.cloudflare.com/#cfw-pubsub-namespace-properties).
 
 ### **`WorkersKV({ ... })`**
 
