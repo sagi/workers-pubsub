@@ -29,4 +29,4 @@ const PubSubREST = async ({
   return PubSub;
 };
 
-export default PubSubREST
+module.exports = PubSubREST;

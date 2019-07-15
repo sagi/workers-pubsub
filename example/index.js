@@ -1,18 +1,14 @@
-const WorkersKV = require('../');
+const fetchImpl = require('cross-fetch');
+const WebCrypto = require('node-webcrypto-ossl');
+const cryptoImpl = new WebCrypto();
 
 (async () => {
-  const cfAccountId = process.env.CLOUDFLARE_ACCOUNT_ID;
-  const cfAuthKey = process.env.CLOUDFLARE_AUTH_KEY;
-  const cfEmail = process.env.CLOUDFLARE_EMAIL;
-
-  const KV = new WorkersKV({
-    cfAccountId,
-    cfAuthKey,
-    cfEmail,
+  const PubSubREST = require('../');
+  const serviceAccountJSON = require('./service_account.key.json');
+  const PubSub = await PubSubREST({
+    serviceAccountJSON,
+    cryptoImpl,
+    fetchImpl,
   });
-
-  const namespaceId = process.env.CLOUDFLARE_NAMESPACE_ID;
-  const results = await KV.listKeys({ namespaceId });
-
-  console.log(results);
+  console.log(await PubSub.topics.list());
 })();
