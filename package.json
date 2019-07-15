@@ -1,6 +1,6 @@
 {
   "name": "@sagi.io/cfw-pubsub",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Google Pub/Sub API for Cloudflare Workers",
   "author": "Sagi Kedmi <git@sagi.io> (https://sagi.io)",
   "homepage": "https://sagi.io",

@@ -20,18 +20,18 @@ jobs:
           key: yarn-packages-{{ checksum "yarn.lock" }}
           paths:
             - ~/.cache/yarn
-      - run:
-          name: test
-          command: yarn test
-      - run:
+     - run:
           name: eslint
           command: yarn lint
       - run:
           name: prettier
           command: yarn prettier:ci
       - run:
-          name: code-coverage
-          command: yarn test --coverage
+          name: test
+          command: yarn test
+      - run:
+          name: coveralls
+          command: yarn test --coverage --coverageReporters=text-lcov | yarn coveralls
       - store_artifacts:
           path: coverage
           prefix: coverage
