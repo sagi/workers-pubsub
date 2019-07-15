@@ -36,7 +36,7 @@ export const PubSubREST = async ({
 (async () => {
   const serviceAccountJSON = require('../service_account.key.json');
   const PubSub = await PubSubREST({ serviceAccountJSON, cryptoImpl });
-  console.log(await PubSub.topics.list());
+  console.log(await PubSub.topics.get({ topic: 'cfw-task' }));
   //const result = await PubSub.topics.list();
   //console.log(result);
 })();
