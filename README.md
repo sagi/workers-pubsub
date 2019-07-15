@@ -14,33 +14,61 @@ $ npm i @sagi.io/cfw-pubsub
 
 ## API
 
-Instantiate a `PubSubREST` instance:
+We follow [Google's Pub/Sub REST API](https://cloud.google.com/pubsub/docs/reference/rest/) specification. We'll add more methods if there's demand.
 
-~~~js
-import PubSubREST from '@sagi.io/cfw-pubsub'
-const serviceAccountJSON = ...
+See below for concrete examples for Cloudflare Workers and Node.js.
 
-const PubSub = new PubSubREST({ serviceAccountJSON })
-~~~
+### **`PubSubREST({ ... })`**
 
-### **`PubSub.topics.list({ ... })`**
+Instantiates `PubSub` instance.
 
-### **`PubSub.topics.publish({ ... })`**
-
-### **`PubSub.helpers.createPubSubMessage({ ... })`**
 Function definition:
 
 ```js
-const createPubSubMessage = ({
-  message = '',
-  attributes = undefined,
-} = {}) => { ... }
+ const PubSubREST = async ({
+  serviceAccountJSON,
+  cryptoImpl = null,
+  fetchImpl = null,
+}) => { ... }
 ```
 Where:
 
-  - **`message`** *optional* Your Cloudflare account id.
-  - **`cfEmail`** *optional* The email you registered with Cloudflare.
- 
+  - **`serviceAccountJSON`** *required* Is a Google Cloud service account with a **Pub/Sub Admin** role. An object.
+  - **`cryptoImpl`** *optional* Not needed when running on Cloudflare Workers. See concrete example below for how to use it with Node.js.
+  - **`fetchImpl`** *optional* Not needed when running on Cloudflare Workers. See concrete example below for how to use it with Node.js.
+
+### **`PubSub.topics.publish({ ... })`**
+
+Publishes a message to a topic.
+
+Function definition:
+
+```js
+const publish = ({ topic, messages } = {}) => { ... }
+```
+Where:
+
+  - **`topic`** *required* The topic to send messages to.
+  - **`messages`** *required* an array of [Pub/Sub messages](https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage). You can use the `PubSub.helpers.createPubSubMessage` method to easily create a Pub/Sub message.
+
+### **`PubSub.topics.list({ ... })`**
+
+Lists all topics.
+
+### **`PubSub.helpers.createPubSubMessage({ ... })`**
+Helps create a PubSub message easily.
+
+Function definition:
+
+```js
+const createPubSubMessage = ({ message = '', attributes = undefined } = {}) => { ... }
+```
+Where:
+
+  - **`message`** *optional* A message string. e.g. `Hello World`.
+  - **`attributes`** *optional* An object with string values. e.g. `{ type: 'slack-poll' }`.
+
+Returns a [Pub/Sub message](https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage).
 
 ## Cloudflare Workers Example
 
