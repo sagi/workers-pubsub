@@ -1,6 +1,6 @@
 import * as utils from './utils';
 import cfwJwt from '@sagi.io/cfw-jwt';
-import { PubSubREST } from './index';
+import PubSubREST from './index';
 
 jest.mock('./utils');
 jest.mock('./topics');

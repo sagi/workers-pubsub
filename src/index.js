@@ -2,7 +2,7 @@ import * as topicsOps from './topics';
 import { getTokenFromGCPServiceAccount } from '@sagi.io/cfw-jwt';
 import { createPubSubMessage, setGlobals, injectBaseInputs } from './utils';
 
-export const PubSubREST = async ({
+const PubSubREST = async ({
   serviceAccountJSON,
   cryptoImpl = null,
   fetchImpl = null,
@@ -28,3 +28,5 @@ export const PubSubREST = async ({
   const PubSub = { topics, helpers };
   return PubSub;
 };
+
+export default PubSubREST
