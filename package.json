@@ -45,6 +45,7 @@
     "cloud"
   ],
   "dependencies": {
-    "@sagi.io/cfw-jwt": "^0.0.9"
+    "@sagi.io/cfw-jwt": "^0.0.9",
+    "@sagi.io/globalthis": "^0.0.2"
   }
 }

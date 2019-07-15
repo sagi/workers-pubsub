@@ -4,3 +4,4 @@ coverage
 yarn-error.log
 lib
 *.tgz
+*.key.json
