@@ -2,7 +2,7 @@
 
 [`@sagi.io/cfw-pubsub`](https://www.npmjs.com/package/@sagi.io/cfw-pubsub) is a Google Pub/Sub REST API for Cloudflare Workers (can also be used with Node).
 
-[![CircleCI](https://circleci.com/gh/sagi/cfw-pubsub.svg?style=svg&circle-token=c5ae7a8993d47db9ca08a628614585ca45c75f33)](https://circleci.com/gh/sagi/cfw-pubsub)
+[![CircleCI](https://circleci.com/gh/sagi/cfw-pubsub.svg?style=svg&circle-token=88da6b4a2a6ad3055418fb0b9da327d7fff9a99a)](https://circleci.com/gh/sagi/cfw-pubsub)
 [![MIT License](https://img.shields.io/npm/l/@sagi.io/cfw-pubsub.svg?style=flat-square)](http://opensource.org/licenses/MIT)
 [![version](https://img.shields.io/npm/v/@sagi.io/cfw-pubsub.svg?style=flat-square)](http://npm.im/@sagi.io/cfw-pubsub)
 
