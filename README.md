@@ -82,7 +82,7 @@ const serviceAccountJSON = ...
 const PubSub = await PubSubREST({ serviceAccountJSON })
 
 const topic = 'gcf-task'
-const psMessage = PubSub.createPubSubMessage({ message: 'Hello World!' })
+const psMessage = PubSub.helpers.createPubSubMessage({ message: 'Hello World!' })
 const messages = [ psMessage ]
 
 await PubSub.topics.publish({ topic, messages })
