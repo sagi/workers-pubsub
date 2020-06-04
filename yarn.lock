@@ -869,18 +869,18 @@
     "@types/istanbul-reports" "^1.1.1"
     "@types/yargs" "^12.0.9"
 
-"@sagi.io/cfw-jwt@^0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@sagi.io/cfw-jwt/-/cfw-jwt-0.0.9.tgz#70f86753d7db9d0468fedd750f052f881bb22c38"
-  integrity sha512-YUfJ39sXOSzzwgp0eGOPU1JtV45MXrqUwenWMMnhdAVFGk/2cpqiwHLDTfOHC1hyIXUFE+jPQRsLtoqVJ1Dh9A==
-  dependencies:
-    "@sagi.io/globalthis" "^0.0.2"
-    base64url "^3.0.1"
-
 "@sagi.io/globalthis@^0.0.2":
   version "0.0.2"
   resolved "https://registry.yarnpkg.com/@sagi.io/globalthis/-/globalthis-0.0.2.tgz#2777ab71721ecaab1b0dd8aa75abbe0f3ae1ba58"
   integrity sha512-sazB1BcX8IK5UxDgEEd0J1bPB0rwH0k725nYva6ofBhvNX8lMytuRf3mlkTkytNHKTi4EGxBOY+YAD3PkeEtlA==
+
+"@sagi.io/workers-jwt@^0.0.10":
+  version "0.0.10"
+  resolved "https://registry.yarnpkg.com/@sagi.io/workers-jwt/-/workers-jwt-0.0.10.tgz#49d68180b8aac37b2a297b32a8d1120a8e9b3cf0"
+  integrity sha512-Ur5rM5/Cpr7riVkkOx0MdzzKD2Kbzd5dXgt9Hfm+OMxKtoSGgXWmoFBWLgUY3vb/jVnhuGPsw9fw64xVSZfvoA==
+  dependencies:
+    "@sagi.io/globalthis" "^0.0.2"
+    base64url "^3.0.1"
 
 "@types/babel__core@^7.1.0":
   version "7.1.1"

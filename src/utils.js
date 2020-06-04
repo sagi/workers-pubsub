@@ -1,7 +1,7 @@
 import '@sagi.io/globalthis';
 import base64url from 'base64url';
 
-const ERR_PREFIX = `@sagi.io/cfw-pubsub`;
+const ERR_PREFIX = `@sagi.io/workers-pubsub`;
 
 export const keepTruthyProperties = obj =>
   Object.entries(obj).reduce(
