@@ -9,7 +9,7 @@
   "private": false,
   "scripts": {
     "build:babel": "babel --ignore '**/*.test.js' --ignore testdata src -d lib --verbose",
-    "build:webpack": "webpack --display-modules ./lib",
+    "build:webpack": "webpack ./lib",
     "build": "yarn build:babel && yarn build:webpack",
     "prepublishOnly": "yarn test && yarn build",
     "prettier:ci": "prettier --list-different ./src/*.js",
@@ -45,13 +45,5 @@
     "type": "git",
     "url": "https://github.com/sagi/workers-pubsub.git"
   },
-  "keywords": [
-    "cloudflare",
-    "workers",
-    "cloudflare workers",
-    "pubsub",
-    "gcp",
-    "google",
-    "cloud"
-  ]
+  "keywords": ["cloudflare", "workers", "cloudflare workers", "pubsub", "gcp", "google", "cloud"]
 }
