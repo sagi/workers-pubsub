@@ -17,7 +17,12 @@ describe('index', () => {
     utils.injectBaseInputs.mockReturnValueOnce(mockedTopics);
     await expect(PubSubREST({ serviceAccountJSON })).resolves.toEqual({
       topics: mockedTopics,
-      helpers: { createPubSubMessage: utils.createPubSubMessage },
+      helpers: {
+        createPubSubMessage: utils.createPubSubMessage,
+        headers: {
+          Authorization: 'Bearer DEADBEEF',
+        },
+      },
     });
 
     expect(cfwJwt.getTokenFromGCPServiceAccount).toHaveBeenCalledWith({

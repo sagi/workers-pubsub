@@ -23,7 +23,7 @@ const PubSubREST = async ({
   const baseInputs = { headers, projectId, baseUrl };
 
   const topics = injectBaseInputs(baseInputs, topicsOps);
-  const helpers = { createPubSubMessage };
+  const helpers = { createPubSubMessage, headers };
 
   const PubSub = { topics, helpers };
   return PubSub;
