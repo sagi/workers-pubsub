@@ -3,7 +3,7 @@ import { Base64 } from 'js-base64';
 
 const ERR_PREFIX = `@sagi.io/workers-pubsub`;
 
-export const keepTruthyProperties = obj =>
+export const keepTruthyProperties = (obj) =>
   Object.entries(obj).reduce(
     (acc, [k, v]) => ({ ...acc, ...(v ? { [k]: v } : {}) }),
     {}

@@ -1,4 +1,4 @@
-export const list = baseInputs => async () => {
+export const list = (baseInputs) => async () => {
   const { headers, projectId, baseUrl } = baseInputs;
   const method = 'GET';
   const url = `${baseUrl}/projects/${projectId}/topics`;
@@ -7,7 +7,7 @@ export const list = baseInputs => async () => {
   return topics;
 };
 
-export const get = baseInputs => async ({ topic }) => {
+export const get = (baseInputs) => async ({ topic }) => {
   const { headers, projectId, baseUrl } = baseInputs;
   const method = 'GET';
   const url = `${baseUrl}/projects/${projectId}/topics/${topic}`;
@@ -15,7 +15,7 @@ export const get = baseInputs => async ({ topic }) => {
   return await response.json();
 };
 
-export const publish = baseInputs => async ({ topic, messages }) => {
+export const publish = (baseInputs) => async ({ topic, messages }) => {
   const { headers, projectId, baseUrl } = baseInputs;
 
   const method = 'POST';
