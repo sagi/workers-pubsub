@@ -92,10 +92,10 @@ await PubSub.topics.publish({ topic, messages })
 
 ~~~js
 import fetchImpl from 'cross-fetch'
-import WebCrytpo from 'node-webcrypto-ossl'
+import { Crypto }from 'node-webcrypto-ossl'
 import PubSubREST from '@sagi.io/workers-pubsub'
 
-const cryptoImpl = new WebCrypto()
+const cryptoImpl = new Crypto()
 
 const serviceAccountJSON = ...
 
