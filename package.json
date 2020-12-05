@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@sagi.io/globalthis": "^0.0.2",
-    "@sagi.io/workers-jwt": "^0.0.17",
+    "@sagi.io/workers-jwt": "^0.0.18",
     "js-base64": "^3.6.0"
   },
   "devDependencies": {
@@ -45,5 +45,13 @@
     "type": "git",
     "url": "https://github.com/sagi/workers-pubsub.git"
   },
-  "keywords": ["cloudflare", "workers", "cloudflare workers", "pubsub", "gcp", "google", "cloud"]
+  "keywords": [
+    "cloudflare",
+    "workers",
+    "cloudflare workers",
+    "pubsub",
+    "gcp",
+    "google",
+    "cloud"
+  ]
 }
