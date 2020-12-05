@@ -1,5 +1,5 @@
 import '@sagi.io/globalthis';
-import base64url from 'base64url';
+import { Base64 } from 'js-base64';
 
 const ERR_PREFIX = `@sagi.io/workers-pubsub`;
 
@@ -19,7 +19,7 @@ export const createPubSubMessage = ({
       `${ERR_PREFIX}: must either have a non-empty message field or at least one attribute.`
     );
   }
-  const data = message ? base64url.encode(message) : null;
+  const data = message ? Base64.encode(message, true) : null;
   const psMessage = { data, attributes };
   return keepTruthyProperties(psMessage);
 };
