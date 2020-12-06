@@ -1122,10 +1122,10 @@
   resolved "https://registry.yarnpkg.com/@sagi.io/globalthis/-/globalthis-0.0.2.tgz#2777ab71721ecaab1b0dd8aa75abbe0f3ae1ba58"
   integrity sha512-sazB1BcX8IK5UxDgEEd0J1bPB0rwH0k725nYva6ofBhvNX8lMytuRf3mlkTkytNHKTi4EGxBOY+YAD3PkeEtlA==
 
-"@sagi.io/workers-jwt@^0.0.18":
-  version "0.0.18"
-  resolved "https://registry.yarnpkg.com/@sagi.io/workers-jwt/-/workers-jwt-0.0.18.tgz#a8d1238a8bfa640caa68263218641a9ed1245e48"
-  integrity sha512-1fgG1tap/Mx3UiSbQ8rMO3shNbN7CvXsBYKTdG97nKkvDKLToOYpPd5rb7yzcO6GcHx7jjxKMLa2vYjuFRRGXQ==
+"@sagi.io/workers-jwt@^0.0.19":
+  version "0.0.19"
+  resolved "https://registry.yarnpkg.com/@sagi.io/workers-jwt/-/workers-jwt-0.0.19.tgz#a4ca5bd5f9ef6d63145d79e241ab67ff1d1a003c"
+  integrity sha512-nb/B5YxMo41FSHdScstGrl7fkUDl9si3GX8kPZIIuHh9y4tRGnDV+O51jn0nzupR+CAJe3N+/WiXhJBMU7GYeA==
   dependencies:
     "@sagi.io/globalthis" "^0.0.2"
     js-base64 "^3.6.0"

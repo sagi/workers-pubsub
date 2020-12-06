@@ -1,6 +1,6 @@
 {
   "name": "@sagi.io/workers-pubsub",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Google Pub/Sub API for Cloudflare Workers",
   "author": "Sagi Kedmi <git@sagi.io> (https://sagi.io)",
   "homepage": "https://sagi.io",
@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@sagi.io/globalthis": "^0.0.2",
-    "@sagi.io/workers-jwt": "^0.0.18",
+    "@sagi.io/workers-jwt": "^0.0.19",
     "js-base64": "^3.6.0"
   },
   "devDependencies": {
