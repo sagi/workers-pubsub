@@ -68,6 +68,7 @@ Where:
 
   - **`message`** *optional* A message string. e.g. `Hello World`.
   - **`attributes`** *optional* An object with string values. e.g. `{ type: 'slack-poll' }`.
+  - **`ordering_key`** *optional* An ordering key to allow subscribers to receive messages in order in the same region. [Read more here](https://cloud.google.com/pubsub/docs/publisher#using_ordering_keys).
 
 Returns a [Pub/Sub message](https://cloud.google.com/pubsub/docs/reference/rest/v1/PubsubMessage).
 
