@@ -13,6 +13,7 @@ export const keepTruthyProperties = (obj) =>
 export const createPubSubMessage = ({
   message = null,
   attributes = null,
+  ordering_key = null,
 } = {}) => {
   if (!message && !attributes) {
     throw new Error(
@@ -20,7 +21,7 @@ export const createPubSubMessage = ({
     );
   }
   const data = message ? Base64.encode(message, true) : null;
-  const psMessage = { data, attributes };
+  const psMessage = { data, attributes, ordering_key };
   return keepTruthyProperties(psMessage);
 };
 
