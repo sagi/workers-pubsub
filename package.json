@@ -1,6 +1,6 @@
 {
   "name": "@sagi.io/workers-pubsub",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Google Pub/Sub API for Cloudflare Workers",
   "author": "Sagi Kedmi <git@sagi.io> (https://sagi.io)",
   "homepage": "https://sagi.io",
@@ -10,8 +10,8 @@
   "scripts": {
     "build:babel": "babel --ignore '**/*.test.js' --ignore testdata src -d lib --verbose",
     "build": "yarn build:babel",
-    "prepublishOnly": "yarn test && yarn build",
-    "prettier:ci": "prettier --list-different ./src/*.js",
+    "prepublishOnly": "yarn test && yarn prettier:ci && yarn lint && yarn build",
+    "prettier:ci": "prettier --check ./src/*.js",
     "coverage": "yarn build && yarn jest --coverage",
     "coveralls": "jest --coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "yarn eslint ./src",
