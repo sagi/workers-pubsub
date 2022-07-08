@@ -2,7 +2,7 @@
 
 [`@sagi.io/workers-pubsub`](https://www.npmjs.com/package/@sagi.io/workers-pubsub) is a Google Pub/Sub REST API for Cloudflare Workers (can also be used with Node).
 
-⭐ We use at **[AnonymityBot](https://anonymitybot.com/s=workers-pubsub)** to efficiently access Google's PubSub REST API with 1 round trip.
+⭐ We use it at **[OpenSay](https://opensay.co/s=workers-pubsub)** to efficiently access Google's PubSub REST API with 1 round trip.
 
 [![CircleCI](https://circleci.com/gh/sagi/workers-pubsub.svg?style=svg&circle-token=88da6b4a2a6ad3055418fb0b9da327d7fff9a99a)](https://circleci.com/gh/sagi/workers-pubsub)
 [![Coverage Status](https://coveralls.io/repos/github/sagi/workers-pubsub/badge.svg)](https://coveralls.io/github/sagi/workers-pubsub)
