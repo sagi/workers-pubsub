@@ -1,4 +1,5 @@
 *
+!index.d.ts
 !/lib/*
 !package.json
 !README.md
